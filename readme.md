@@ -1,4 +1,6 @@
 # Laravel
+这是Laravel的学习过程！
+
 
 ## 数据库迁移
 `php artisan migrate`
