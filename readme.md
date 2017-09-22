@@ -16,4 +16,5 @@
 - 手动刷新
 
 - 自动刷新样式表：
+`npm run dev`
 `npm run watch-poll`

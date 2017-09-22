@@ -14,4 +14,10 @@ class UserPolicy
         return $currentUser->id === $user->id;
     }
 
+    //对管理员权限的判断
+    public function destroy(User $currentUser, User $user)
+    {
+        return $currentUser->is_admin && $currentUser->id !== $user->id;
+    }
+
 }
