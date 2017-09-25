@@ -29,11 +29,6 @@ class UsersController extends Controller
     	return view('users.create');
     }
 
-    //show单个用户的信息
-    public function show(User $user)
-    {
-    	return view('users.show', compact('user'));
-    }
 
     public function store(Request $request)
     {
@@ -119,5 +114,13 @@ class UsersController extends Controller
         Auth::login($user);
         session()->flash('success', '恭喜你，激活成功！');
         return redirect()->route('users.show', [$user]);
+    }
+
+    public function show(User $user)
+    {
+      $statuses = $user->statuses()
+                        ->orderBy('created_at', 'desc')
+                        ->paginate(30);
+      return view('users.show', compact('user', 'statuses'));
     }
 }

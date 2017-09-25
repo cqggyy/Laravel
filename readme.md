@@ -2,9 +2,6 @@
 这是Laravel的学习过程！
 
 
-## 数据库迁移
-`php artisan migrate`
-
 ## 产生key命令
 `php artisan key:generate`
 
@@ -18,3 +15,16 @@
 - 自动刷新样式表：
 `npm run dev`
 `npm run watch-poll`
+
+
+## 数据库迁移
+
+- 建立数据表
+`php artisan make:migration create_statuses_table --create="statuses"`
+`php artisan migrate`
+
+
+## 生成测试数据
+- 生成工厂类文件
+`php artisan make:factory StatusFactory`
+`php artisan make:seeder StatusesTableSeeder`
