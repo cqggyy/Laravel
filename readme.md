@@ -20,11 +20,13 @@
 ## 数据库迁移
 
 - 建立数据表
+
 `php artisan make:migration create_statuses_table --create="statuses"`
 `php artisan migrate`
 
 
 ## 生成测试数据
 - 生成工厂类文件
+
 `php artisan make:factory StatusFactory`
 `php artisan make:seeder StatusesTableSeeder`
